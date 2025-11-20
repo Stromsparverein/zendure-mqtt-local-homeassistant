@@ -4,7 +4,7 @@
 # replace <BAT01-SERIAL-HERE> with the serial number of your first battery
 # replace <BAT02-SERIAL-HERE> with the serial number of your second battery
 #
-# Then add this lines to your configuration.yaml file and relstart homeassistant
+# Then add this lines to your configuration.yaml file and restart homeassistant
 
 mqtt:  
   sensor:
