@@ -1,0 +1,1 @@
+# zendure-mqtt-local-homeassistant
