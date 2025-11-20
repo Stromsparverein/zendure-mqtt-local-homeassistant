@@ -1,0 +1,25 @@
+### Preperation ####
+# replace <HEAD-SERIAL-HERE> with the serial number of your second battery
+
+alias: zendure_custom_SetOutputLimit
+description: ""
+triggers:
+  - trigger: state
+    entity_id:
+      - input_number.outputlimit
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 0
+conditions: []
+actions:
+  - action: mqtt.publish
+    metadata: {}
+    data:
+      evaluate_payload: false
+      qos: "2"
+      retain: false
+      payload: "{{ states.input_number.outputlimit.state }}"
+      topic: Zendure/number/<HEAD-SERIAL-HERE>/outputLimit/set
+mode: single
+

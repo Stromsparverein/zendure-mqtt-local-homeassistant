@@ -1,0 +1,46 @@
+### Preperation ###
+# replace "cm_00_active_power_combined" with "eoe_reader_ActivePowerCombined" (when using eoe reader integration via https)
+# more about eoe_reader integration here: https://github.com/Stromsparverein/eoe-reader-homeassistant
+
+alias: zendure_custom_0Ausregelung
+description: ""
+triggers:
+  - trigger: state
+    entity_id:
+      - sensor.cm_00_active_power_combined
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 0
+conditions:
+  - condition: state
+    entity_id: input_select.betriebsmodus
+    state: 0-Einspeisung
+actions:
+  - if:
+      - condition: state
+        entity_id: input_select.acmode
+        state: Input mode
+    then:
+      - action: input_select.select_option
+        metadata: {}
+        data:
+          option: Output mode
+        target:
+          entity_id: input_select.acmode
+  - action: input_number.set_value
+    metadata: {}
+    target:
+      entity_id: input_number.outputlimit
+    data:
+      value: >
+        {% if (states.input_number.outputlimit.state | int +
+        states.sensor.cm_00_active_power_combined.state | int) > 800 %}
+          800
+        {% elif (states.input_number.outputlimit.state | int +
+            states.sensor.cm_00_active_power_combined.state | int) < 0 %}
+            0
+        {% else %}
+          {{ states.input_number.outputlimit.state | int + states.sensor.cm_00_active_power_combined.state | int}}
+        {% endif %}
+mode: single

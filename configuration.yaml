@@ -1,0 +1,577 @@
+
+### Preperation ####
+# replace <HEAD-SERIAL-HERE> with the serial number of your head unit
+# replace <BAT01-SERIAL-HERE> with the serial number of your first battery
+# replace <BAT02-SERIAL-HERE> with the serial number of your second battery
+#
+# Then add this lines to your configuration.yaml file and relstart homeassistant
+
+mqtt:  
+  sensor:
+
+
+#### Head Unit #######    
+
+    - name: "head_heatState"
+      state_topic: "Zendure/sensor/<HEAD-SERIAL-HERE>/heatState"
+      unique_id: "zendure_custom_head_heatState"
+      device:
+        name: "zendure_custom"
+        identifiers:
+          - "zendure_custom"
+
+    - name: "head_packInputPower"
+      state_topic: "Zendure/sensor/<HEAD-SERIAL-HERE>/packInputPower"
+      device_class: "power"
+      unit_of_measurement: "W"
+      unique_id: "zendure_custom_head_packInputPower"
+      device:
+        name: "zendure_custom"
+        identifiers:
+          - "zendure_custom"
+
+    - name: "head_outputPackPower"
+      state_topic: "Zendure/sensor/<HEAD-SERIAL-HERE>/outputPackPower"
+      device_class: "power"
+      unit_of_measurement: "W"
+      unique_id: "zendure_custom_head_outputPackPower"
+      device:
+        name: "zendure_custom"
+        identifiers:
+          - "zendure_custom"
+
+    - name: "head_outputHomePower"
+      state_topic: "Zendure/sensor/<HEAD-SERIAL-HERE>/outputHomePower"
+      device_class: "power"
+      unit_of_measurement: "W"
+      unique_id: "zendure_custom_head_outputHomePower"
+      device:
+        name: "zendure_custom"
+        identifiers:
+          - "zendure_custom"
+
+    - name: "head_remainOutTime"
+      state_topic: "Zendure/sensor/<HEAD-SERIAL-HERE>/remainOutTime"
+      unique_id: "zendure_custom_head_remainOutTime"
+      device:
+        name: "zendure_custom"
+        identifiers:
+          - "zendure_custom"
+
+    - name: "head_packState"
+      state_topic: "Zendure/sensor/<HEAD-SERIAL-HERE>/packState"
+      unique_id: "zendure_custom_head_packState"
+      device:
+        name: "zendure_custom"
+        identifiers:
+          - "zendure_custom"
+
+    - name: "head_packNum"
+      state_topic: "Zendure/sensor/<HEAD-SERIAL-HERE>/packNum"
+      unique_id: "zendure_custom_head_packNum"
+      device:
+        name: "zendure_custom"
+        identifiers:
+          - "zendure_custom"
+
+    - name: "head_electricLevel"
+      state_topic: "Zendure/sensor/<HEAD-SERIAL-HERE>/electricLevel"
+      device_class: "battery"
+      unit_of_measurement: "%"
+      unique_id: "zendure_custom_head_electricLevel"
+      device:
+        name: "zendure_custom"
+        identifiers:
+          - "zendure_custom"
+
+    - name: "head_solarInputPower"
+      state_topic: "Zendure/sensor/<HEAD-SERIAL-HERE>/solarInputPower"
+      device_class: "power"
+      unit_of_measurement: "W"
+      unique_id: "zendure_custom_head_solarInputPower"
+      device:
+        name: "zendure_custom"
+        identifiers:
+          - "zendure_custom"
+
+    - name: "head_gridInputPower"
+      state_topic: "Zendure/sensor/<HEAD-SERIAL-HERE>/gridInputPower"
+      device_class: "power"
+      unit_of_measurement: "W"
+      unique_id: "zendure_custom_head_gridInputPower"
+      device:
+        name: "zendure_custom"
+        identifiers:
+          - "zendure_custom"
+
+
+    - name: "head_pv1"
+      state_topic: "Zendure/sensor/<HEAD-SERIAL-HERE>/solarPower1"
+      device_class: "power"
+      unit_of_measurement: "W"
+      unique_id: "zendure_custom_head_pv1"
+      device:
+        name: "zendure_custom"
+        identifiers:
+          - "zendure_custom"
+
+    - name: "head_pv2"
+      state_topic: "Zendure/sensor/<HEAD-SERIAL-HERE>/solarPower2"
+      device_class: "power"
+      unit_of_measurement: "W"
+      unique_id: "zendure_custom_head_pv2"
+      device:
+        name: "zendure_custom"
+        identifiers:
+          - "zendure_custom"
+
+    - name: "head_pv3"
+      state_topic: "Zendure/sensor/<HEAD-SERIAL-HERE>/solarPower3"
+      device_class: "power"
+      unit_of_measurement: "W"
+      unique_id: "zendure_custom_head_pv3"
+      device:
+        name: "zendure_custom"
+        identifiers:
+          - "zendure_custom"
+
+    - name: "head_pv4"
+      state_topic: "Zendure/sensor/<HEAD-SERIAL-HERE>/solarPower4"
+      device_class: "power"
+      unit_of_measurement: "W"
+      unique_id: "zendure_custom_head_pv4"
+      device:
+        name: "zendure_custom"
+        identifiers:
+          - "zendure_custom"  
+
+    - name: "head_pass"
+      state_topic: "Zendure/sensor/<HEAD-SERIAL-HERE>/pass"
+      unique_id: "zendure_custom_head_pass"
+      device:
+        name: "zendure_custom"
+        identifiers:
+          - "zendure_custom"
+
+    - name: "head_reverseState"
+      state_topic: "Zendure/sensor/<HEAD-SERIAL-HERE>/reverseState"
+      unique_id: "zendure_custom_head_reverseState"
+      device:
+        name: "zendure_custom"
+        identifiers:
+          - "zendure_custom"
+
+    - name: "head_socStatus"
+      state_topic: "Zendure/sensor/<HEAD-SERIAL-HERE>/socStatus"
+      unique_id: "zendure_custom_head_socStatus"
+      device:
+        name: "zendure_custom"
+        identifiers:
+          - "zendure_custom"
+
+    - name: "head_hyperTmp"
+      state_topic: "Zendure/sensor/<HEAD-SERIAL-HERE>/hyperTmp"
+      unique_id: "zendure_custom_head_hyperTmp"
+      device:
+        name: "zendure_custom"
+        identifiers:
+          - "zendure_custom"
+
+    - name: "head_gridOffPower"
+      state_topic: "Zendure/sensor/<HEAD-SERIAL-HERE>/gridOffPower"
+      unique_id: "zendure_custom_head_gridOffPower"
+      device:
+        name: "zendure_custom"
+        identifiers:
+          - "zendure_custom"
+
+    - name: "head_acMode"
+      state_topic: "Zendure/select/<HEAD-SERIAL-HERE>/acMode"
+      unique_id: "zendure_custom_head_acMode"
+      device:
+        name: "zendure_custom"
+        identifiers:
+          - "zendure_custom"
+
+    - name: "head_gridOffMode"
+      state_topic: "Zendure/select/<HEAD-SERIAL-HERE>/gridOffMode"
+      unique_id: "zendure_custom_head_gridOffMode"
+      device:
+        name: "zendure_custom"
+        identifiers:
+          - "zendure_custom"
+
+    - name: "head_gridReverse"
+      state_topic: "Zendure/select/<HEAD-SERIAL-HERE>/gridReverse"
+      unique_id: "zendure_custom_head_gridReverse"
+      device:
+        name: "zendure_custom"
+        identifiers:
+          - "zendure_custom"
+
+    - name: "head_socSet"
+      state_topic: "Zendure/number/<HEAD-SERIAL-HERE>/socSet"
+      device_class: "battery"
+      unit_of_measurement: "%"
+      unique_id: "zendure_custom_head_socSet"
+      device:
+        name: "zendure_custom"
+        identifiers:
+          - "zendure_custom"
+          
+
+    - name: "head_minSoc"
+      state_topic: "Zendure/number/<HEAD-SERIAL-HERE>/minSoc"
+      device_class: "battery"
+      unit_of_measurement: "%"
+      unique_id: "zendure_custom_head_minSoc"
+      device:
+        name: "zendure_custom"
+        identifiers:
+          - "zendure_custom"
+          
+
+    - name: "head_inverseMaxPower"
+      state_topic: "Zendure/number/<HEAD-SERIAL-HERE>/inverseMaxPower"
+      device_class: "power"
+      unit_of_measurement: "W"
+      unique_id: "zendure_custom_head_inverseMaxPower"
+      device:
+        name: "zendure_custom"
+        identifiers:
+          - "zendure_custom"
+          
+
+    - name: "head_outputLimit"
+      state_topic: "Zendure/number/<HEAD-SERIAL-HERE>/outputLimit"
+      device_class: "power"
+      unit_of_measurement: "W"
+      unique_id: "zendure_custom_head_outputLimit"
+      device:
+        name: "zendure_custom"
+        identifiers:
+          - "zendure_custom"
+          
+
+    - name: "head_inputLimit"
+      state_topic: "Zendure/number/<HEAD-SERIAL-HERE>/inputLimit"
+      unique_id: "zendure_custom_head_inputLimit"
+      device:
+        name: "zendure_custom"
+        identifiers:
+          - "zendure_custom"
+          
+##### Battery Pack 01 ######
+
+    - name: "bat01_softVersion"
+      state_topic: "Zendure/sensor/<BAT01-SERIAL-HERE>/<BAT01-SERIAL-HERE>_softVersion"
+      unique_id: "zendure_custom_bat01_softVersion"
+      device:
+        name: "zendure_custom"
+        identifiers:
+          - "zendure_custom"
+
+    - name: "bat01_minVol"
+      state_topic: "Zendure/sensor/<BAT01-SERIAL-HERE>/<BAT01-SERIAL-HERE>_minVol"
+      device_class: "voltage"
+      unit_of_measurement: "V"
+      unique_id: "zendure_custom_bat01_minVol"
+      device:
+        name: "zendure_custom"
+        identifiers:
+          - "zendure_custom"
+
+    - name: "bat01_maxVol"
+      state_topic: "Zendure/sensor/<BAT01-SERIAL-HERE>/<BAT01-SERIAL-HERE>_maxVol"
+      device_class: "voltage"
+      unit_of_measurement: "V"
+      unique_id: "zendure_custom_bat01_maxVol"
+      device:
+        name: "zendure_custom"
+        identifiers:
+          - "zendure_custom"
+
+ 
+    - name: "bat01_batcur"
+      state_topic: "Zendure/sensor/<BAT01-SERIAL-HERE>/<BAT01-SERIAL-HERE>_batcur"
+      device_class: "current"
+      unit_of_measurement: "A"
+      unique_id: "zendure_custom_bat01_batcur"
+      device:
+        name: "zendure_custom"
+        identifiers:
+          - "zendure_custom"
+
+    - name: "bat01_totalVol"
+      state_topic: "Zendure/sensor/<BAT01-SERIAL-HERE>/<BAT01-SERIAL-HERE>_totalVol"
+      device_class: "voltage"
+      unit_of_measurement: "V"
+      unique_id: "zendure_custom_bat01_totalVol"
+      device:
+        name: "zendure_custom"
+        identifiers:
+          - "zendure_custom"
+
+    - name: "bat01_maxTemp"
+      state_topic: "Zendure/sensor/<BAT01-SERIAL-HERE>/<BAT01-SERIAL-HERE>_maxTemp"
+      device_class: "temperature"
+      unit_of_measurement: "°C"
+      unique_id: "zendure_custom_bat01_maxTemp"
+      device:
+        name: "zendure_custom"
+        identifiers:
+          - "zendure_custom"
+
+    - name: "bat01_power"
+      state_topic: "Zendure/sensor/<BAT01-SERIAL-HERE>/<BAT01-SERIAL-HERE>_power"
+      device_class: "power"
+      unit_of_measurement: "W"
+      unique_id: "zendure_custom_bat01_power"
+      device:
+        name: "zendure_custom"
+        identifiers:
+          - "zendure_custom"
+    
+    - name: "bat01_state"
+      state_topic: "Zendure/sensor/<BAT01-SERIAL-HERE>/<BAT01-SERIAL-HERE>_state"
+      unique_id: "zendure_custom_bat01_state"
+      device:
+        name: "zendure_custom"
+        identifiers:
+          - "zendure_custom"
+    
+    - name: "bat01_socLevel"
+      state_topic: "Zendure/sensor/<BAT01-SERIAL-HERE>/<BAT01-SERIAL-HERE>_socLevel"
+      device_class: "battery"
+      unit_of_measurement: "%"
+      unique_id: "zendure_custom_bat01_socLevel"
+      device:
+        name: "zendure_custom"
+        identifiers:
+          - "zendure_custom"
+
+##### Battery Pack 02 ######
+
+    - name: "bat02_softVersion"
+      state_topic: "Zendure/sensor/<BAT02-SERIAL-HERE>/<BAT02-SERIAL-HERE>_softVersion"
+      unique_id: "zendure_custom_bat02_softVersion"
+      device:
+        name: "zendure_custom"
+        identifiers:
+          - "zendure_custom"
+
+    - name: "bat02_minVol"
+      state_topic: "Zendure/sensor/<BAT02-SERIAL-HERE>/<BAT02-SERIAL-HERE>_minVol"
+      device_class: "voltage"
+      unit_of_measurement: "V"
+      unique_id: "zendure_custom_bat02_minVol"
+      device:
+        name: "zendure_custom"
+        identifiers:
+          - "zendure_custom"
+
+    - name: "bat02_maxVol"
+      state_topic: "Zendure/sensor/<BAT02-SERIAL-HERE>/<BAT02-SERIAL-HERE>_maxVol"
+      device_class: "voltage"
+      unit_of_measurement: "V"
+      unique_id: "zendure_custom_bat02_maxVol"
+      device:
+        name: "zendure_custom"
+        identifiers:
+          - "zendure_custom"
+
+
+    - name: "bat02_batcur"
+      state_topic: "Zendure/sensor/<BAT02-SERIAL-HERE>/<BAT02-SERIAL-HERE>_batcur"
+      device_class: "current"
+      unit_of_measurement: "A"
+      unique_id: "zendure_custom_bat02_batcur"
+      device:
+        name: "zendure_custom"
+        identifiers:
+          - "zendure_custom"
+
+    - name: "bat02_totalVol"
+      state_topic: "Zendure/sensor/<BAT02-SERIAL-HERE>/<BAT02-SERIAL-HERE>_totalVol"
+      device_class: "voltage"
+      unit_of_measurement: "V"
+      unique_id: "zendure_custom_bat02_totalVol"
+      device:
+        name: "zendure_custom"
+        identifiers:
+          - "zendure_custom"
+
+    - name: "bat02_maxTemp"
+      state_topic: "Zendure/sensor/<BAT02-SERIAL-HERE>/<BAT02-SERIAL-HERE>_maxTemp"
+      device_class: "temperature"
+      unit_of_measurement: "°C"
+      unique_id: "zendure_custom_bat02_maxTemp"
+      device:
+        name: "zendure_custom"
+        identifiers:
+          - "zendure_custom"
+
+    - name: "bat02_power"
+      state_topic: "Zendure/sensor/<BAT02-SERIAL-HERE>/<BAT02-SERIAL-HERE>_power"
+      device_class: "power"
+      unit_of_measurement: "W"
+      unique_id: "zendure_custom_bat02_power"
+      device:
+        name: "zendure_custom"
+        identifiers:
+          - "zendure_custom"
+    
+    - name: "bat02_state"
+      state_topic: "Zendure/sensor/<BAT02-SERIAL-HERE>/<BAT02-SERIAL-HERE>_state"
+      unique_id: "zendure_custom_bat02_state"
+      device:
+        name: "zendure_custom"
+        identifiers:
+          - "zendure_custom"
+    
+    - name: "bat02_socLevel"
+      state_topic: "Zendure/sensor/<BAT02-SERIAL-HERE>/<BAT02-SERIAL-HERE>_socLevel"
+      device_class: "battery"
+      unit_of_measurement: "%"
+      unique_id: "zendure_custom_bat02_socLevel"
+      device:
+        name: "zendure_custom"
+        identifiers:
+          - "zendure_custom"
+
+sensor:
+  - platform: integration
+    source: sensor.zendure_custom_head_solarInputPower
+    name: zendure_custom_helpers_totalSolarProduction
+    unit_prefix: k
+    round: 6
+    max_sub_interval:
+      seconds: 15
+
+  - platform: integration
+    source: sensor.zendure_custom_head_pv1
+    name: zendure_custom_helpers_PV1_SolarProduction
+    unit_prefix: k
+    round: 6
+    max_sub_interval:
+      seconds: 15
+
+  - platform: integration
+    source: sensor.zendure_custom_head_pv2
+    name: zendure_custom_helpers_PV2_SolarProduction
+    unit_prefix: k
+    round: 6
+    max_sub_interval:
+      seconds: 15
+
+  - platform: integration
+    source: sensor.zendure_custom_head_pv3
+    name: zendure_custom_helpers_PV3_SolarProduction
+    unit_prefix: k
+    round: 6
+    max_sub_interval:
+      seconds: 15
+
+  - platform: integration
+    source: sensor.zendure_custom_head_pv4
+    name: zendure_custom_helpers_PV4_SolarProduction
+    unit_prefix: k
+    round: 6
+    max_sub_interval:
+      seconds: 15
+
+  - platform: integration
+    source: sensor.zendure_custom_head_outputHomePower
+    name: zendure_custom_helpers_outputHomePower
+    unit_prefix: k
+    round: 6
+    max_sub_interval:
+      seconds: 15
+
+  - platform: integration
+    source: sensor.zendure_custom_head_packInputPower
+    name: zendure_custom_helpers_packInputPower
+    unit_prefix: k
+    round: 6
+    max_sub_interval:
+      seconds: 15
+
+  - platform: integration
+    source: sensor.zendure_custom_head_gridInputPower
+    name: zendure_custom_helpers_gridInputPower
+    unit_prefix: k
+    round: 6
+    max_sub_interval:
+      seconds: 15
+
+  - platform: integration
+    source: sensor.zendure_custom_head_outputPackPower
+    name: zendure_custom_helpers_outputPackPower
+    unit_prefix: k
+    round: 6
+    max_sub_interval:
+      seconds: 15
+
+
+###### Zendure Control ######
+input_select:
+
+  acmode:
+    name: zendure_custom_control_acMode
+    options:
+      - Output mode
+      - Input mode
+    initial: Output mode
+    icon: mdi:panda
+
+  betriebsmodus:
+    name: zendure_custom_control_betriebsModus
+    options:
+      - 0-Einspeisung
+      - Zeitbasiertes Laden
+      - Manueller Betrieb
+    initial: deaktiviert
+    icon: mdi:panda
+
+
+
+input_number:
+  socset:
+    name: zendure_custom_control_maxSoc
+    initial: 80
+    min: 0
+    max: 100
+    step: 1
+  
+  minsoc:
+    name: zendure_custom_control_minSoc
+    initial: 20
+    min: 0
+    max: 100
+    step: 1
+  
+  inversemaxpower:
+    name: zendure_custom_control_inverseMaxPower
+    initial: 800
+    min: 0
+    max: 800
+    step: 1
+
+  outputlimit:
+    name: zendure_custom_control_outputLimit
+    initial: 0
+    min: 0
+    max: 800
+    step: 1
+  
+  inputlimit:
+    name: zendure_custom_control_inputLimit
+    initial: 0
+    min: 0
+    max: 1000
+    step: 1
+
+
+
+
+

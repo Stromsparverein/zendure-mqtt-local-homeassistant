@@ -1,0 +1,106 @@
+### Preperation ###
+# (when using eoe reader integration via https)
+# replace "cm_00_active_power_plus" with "eoe_reader_ActivePowerImport"
+# replace "cm_00_active_power_minus" with "eoe_reader_ActivePowerExport"
+# replace "cm_00_active_power_combined" with "eoe_reader_ActivePowerCombined"
+
+# more about eoe_reader integration here: https://github.com/Stromsparverein/eoe-reader-homeassistant
+
+views:
+  - title: Home
+    sections:
+      - type: grid
+        cards:
+          - type: entities
+            entities:
+              - entity: sensor.cm_00_active_power_plus
+              - entity: sensor.cm_00_active_power_minus
+              - entity: sensor.cm_00_active_power_combined
+            title: CM-Modul
+          - type: entities
+            entities:
+              - entity: sensor.zendure_custom_head_solarinputpower
+              - entity: sensor.zendure_custom_head_outputhomepower
+      - type: grid
+        cards:
+          - type: entities
+            entities:
+              - entity: input_select.acmode
+                name: AC Mode
+              - entity: input_select.betriebsmodus
+              - entity: input_number.inputlimit
+                name: input Limit
+              - entity: input_number.outputlimit
+                name: output Limit
+              - entity: input_number.inversemaxpower
+                name: inverse max Power
+              - entity: input_number.socset
+                name: max soc
+              - entity: input_number.minsoc
+                name: min soc
+            title: Controller
+      - type: grid
+        cards:
+          - type: entities
+            entities:
+              - entity: sensor.zendure_custom_head_socstatus
+              - entity: sensor.zendure_custom_head_acmode
+              - entity: sensor.zendure_custom_head_electriclevel
+              - entity: sensor.zendure_custom_head_minsoc
+              - entity: sensor.zendure_custom_head_socset
+              - entity: sensor.zendure_custom_head_outputhomepower
+              - entity: sensor.zendure_custom_head_outputlimit
+              - entity: sensor.zendure_custom_head_inputlimit
+              - entity: sensor.zendure_custom_head_solarinputpower
+              - entity: sensor.zendure_custom_head_packinputpower
+              - entity: sensor.zendure_custom_head_outputpackpower
+              - entity: sensor.zendure_custom_head_hypertmp
+              - entity: sensor.zendure_custom_head_pv1
+              - entity: sensor.zendure_custom_head_pv2
+              - entity: sensor.zendure_custom_head_pv3
+              - entity: sensor.zendure_custom_head_pv4
+              - entity: sensor.zendure_custom_head_gridoffmode
+              - entity: sensor.zendure_custom_head_gridoffpower
+              - entity: sensor.zendure_custom_head_gridreverse
+              - entity: sensor.zendure_custom_head_heatstate
+              - entity: sensor.zendure_custom_head_inversemaxpower
+              - entity: sensor.zendure_custom_head_packnum
+              - entity: sensor.zendure_custom_head_packstate
+              - entity: sensor.zendure_custom_head_pass
+              - entity: sensor.zendure_custom_head_remainouttime
+              - entity: sensor.zendure_custom_head_reversestate
+            title: Head Unit
+          - type: entities
+            entities:
+              - entity: sensor.zendure_custom_helpers_gridinputpower
+              - entity: sensor.zendure_custom_helpers_outputhomepower
+              - entity: sensor.zendure_custom_helpers_packinputpower
+              - entity: sensor.zendure_custom_helpers_outputpackpower
+              - entity: sensor.zendure_custom_helpers_pv1_solarproduction
+              - entity: sensor.zendure_custom_helpers_pv2_solarproduction
+              - entity: sensor.zendure_custom_helpers_pv3_solarproduction
+              - entity: sensor.zendure_custom_helpers_pv4_solarproduction
+              - entity: sensor.zendure_custom_helpers_totalsolarproduction
+            title: Helpers
+          - type: entities
+            entities:
+              - sensor.zendure_custom_bat01_batcur
+              - sensor.zendure_custom_bat01_maxtemp
+              - sensor.zendure_custom_bat01_maxvol
+              - sensor.zendure_custom_bat01_minvol
+              - sensor.zendure_custom_bat01_power
+              - sensor.zendure_custom_bat01_soclevel
+              - sensor.zendure_custom_bat01_softversion
+              - sensor.zendure_custom_bat01_state
+            title: Battery 1
+          - type: entities
+            entities:
+              - sensor.zendure_custom_bat02_batcur
+              - sensor.zendure_custom_bat02_maxtemp
+              - sensor.zendure_custom_bat02_maxvol
+              - sensor.zendure_custom_bat02_minvol
+              - sensor.zendure_custom_bat02_power
+              - sensor.zendure_custom_bat02_soclevel
+              - sensor.zendure_custom_bat02_softversion
+              - sensor.zendure_custom_bat02_state
+            title: Battery 2
