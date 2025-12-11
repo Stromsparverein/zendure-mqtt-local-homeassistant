@@ -530,7 +530,7 @@ input_select:
       - 0-Einspeisung
       - Zeitbasiertes Laden
       - Manueller Betrieb
-    initial: deaktiviert
+    initial: "Manueller Betrieb"
     icon: mdi:panda
 
 
